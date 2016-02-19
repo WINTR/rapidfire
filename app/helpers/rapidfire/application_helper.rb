@@ -11,4 +11,5 @@ module Rapidfire
       answers.include?(option)
     end
   end
+
 end

@@ -6,6 +6,7 @@ module Rapidfire
     before_filter :find_question!, :only => [:edit, :update, :destroy]
 
     def index
+      @course = Course.find(@question_group.course_id)
       @questions = @question_group.questions
     end
 

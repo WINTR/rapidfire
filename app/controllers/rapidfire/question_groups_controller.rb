@@ -38,6 +38,7 @@ module Rapidfire
 
     def results
       @question_group = QuestionGroup.find(params[:id])
+      @course = Course.find(@question_group.course_id)
       @question_group_results =
         QuestionGroupResults.new(question_group: @question_group).extract
 

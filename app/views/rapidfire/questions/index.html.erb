@@ -1,9 +1,7 @@
 <h2>
-  Questions
-  <%= link_to "New Question", new_question_group_question_path(@question_group) %>
+  <%= @course.name %> Survey Questions
 </h2>
 <hr/>
-
 <table>
   <colgroup>
     <col>
@@ -19,3 +17,4 @@
     <%= render partial: "question", collection: @questions %>
   </tbody>
 </table>
+<%= link_to "Add New Question", new_question_group_question_path(@question_group), :class => 'btn btn-outline' %>

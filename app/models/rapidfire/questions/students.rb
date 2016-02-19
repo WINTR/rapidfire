@@ -1,10 +1,9 @@
 module Rapidfire
   module Questions
     class Students < Rapidfire::Question
-      validates :answer_options, :presence => true
 
       def validate_answer(answer)
-        # super(answer)
+        super(answer)
         # if rules[:presence] == "1" || answer.answer_text.present?
         #   answer.validates_inclusion_of :answer_text, :in => options
         # end

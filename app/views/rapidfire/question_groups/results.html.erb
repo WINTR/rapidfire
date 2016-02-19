@@ -1,4 +1,4 @@
-<h1>Results</h1>
+<h1>Results for <%= @course.name %> Survey</h1>
 
 <%- @question_group_results.each do |result| %>
   <div>
@@ -14,7 +14,7 @@
         <table>
           <thead>
             <tr>
-              <th>Option</th>
+              <th>Value</th>
               <th>Count</th>
             </tr>
           </thead>
