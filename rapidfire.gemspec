@@ -32,4 +32,5 @@ PIM
   s.add_development_dependency 'capybara-webkit'
   s.add_development_dependency 'launchy'
   s.add_development_dependency 'minitest'
+  s.add_development_dependency 'pry-byebug'
 end

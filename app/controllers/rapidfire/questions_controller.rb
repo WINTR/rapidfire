@@ -10,6 +10,7 @@ module Rapidfire
     end
 
     def new
+      @course_students = User.where(:course_id => @question_group.course_id)
       @question_form = QuestionForm.new(:question_group => @question_group)
     end
 

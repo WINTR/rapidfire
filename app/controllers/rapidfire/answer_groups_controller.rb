@@ -3,6 +3,7 @@ module Rapidfire
     before_filter :find_question_group!
 
     def new
+      @students = User.where(:course_id => answer_group_params[:question_group].course_id)
       @answer_group_builder = AnswerGroupBuilder.new(answer_group_params)
     end
 

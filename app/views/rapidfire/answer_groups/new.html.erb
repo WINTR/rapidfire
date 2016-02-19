@@ -1,6 +1,6 @@
 <h2>Please answer these Questions</h2>
 <hr/>
-
+<%= @answer_group.inspect %>
 <%= form_for([@question_group, @answer_group_builder]) do |f| %>
   <%- @answer_group_builder.answers.each do |answer| %>
     <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>

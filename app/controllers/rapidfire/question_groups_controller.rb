@@ -7,6 +7,7 @@ module Rapidfire
     end
 
     def new
+      @courses = Course.all
       @question_group = QuestionGroup.new
     end
 
@@ -51,7 +52,7 @@ module Rapidfire
 
     def question_group_params
       if Rails::VERSION::MAJOR == 4
-        params.require(:question_group).permit(:name)
+        params.require(:question_group).permit(:name, :course_id)
       else
         params[:question_group]
       end

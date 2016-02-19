@@ -9,6 +9,7 @@ module Rapidfire
     # 3. if aggregatable, return each option with value
     # 4. else return an array of all the answers given
     def extract
+
       @question_group.questions.collect do |question|
         results =
           case question
@@ -17,8 +18,15 @@ module Rapidfire
             answers = question.answers.map(&:answer_text).map do |text|
               text.to_s.split(Rapidfire.answers_delimiter)
             end.flatten
-
             answers.inject(Hash.new(0)) { |total, e| total[e] += 1; total }
+
+          when Rapidfire::Questions::Students
+            answers = question.answers.map(&:answer_text).map do |user, index|
+              user = User.find(user.to_i).email
+              # question.answers[index] = User.find(user_id).email
+            end.flatten
+            answers.inject(Hash.new(0)) { |total, e| total[e] += 1; total }
+
           when Rapidfire::Questions::Short, Rapidfire::Questions::Date,
             Rapidfire::Questions::Long, Rapidfire::Questions::Numeric
             question.answers.pluck(:answer_text)
